@@ -57,7 +57,7 @@ class AzureMonofunction {
     this.router = new UniversalRouter(routes, options);
   }
 
-  async listen() {
+  listen() {
     return this.request;
   }
 
