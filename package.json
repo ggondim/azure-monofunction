@@ -3,8 +3,8 @@
   "version": "0.1.1",
   "description": "Now you can have multiple API routes and controllers using a single Azure Function.",
   "files": [
-    "./scripts/*",
-    "./templates/*",
+    "scripts/*",
+    "templates/*",
     "index.js"
   ],
   "main": "index.js",
