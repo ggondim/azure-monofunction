@@ -13,7 +13,7 @@ function _propOrVal(object, prop, defaultValue) {
   return value;
 }
 
-const routePrefix = _propOrVal('extensions.http.routePrefix', functionHost, '');
+const routePrefix = _propOrVal('extensions.http.routePrefix', functionHost, '/api');
 
 class AzureMonofunctionRoute {
   constructor(path, methods, run) {
