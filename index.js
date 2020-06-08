@@ -42,7 +42,7 @@ class AzureMonofunction {
     this.initializeRouter(value);
   }
 
-  initializeRouter(routes) {
+  initializeRouter(routeList) {
     const options = {
       baseUrl: this.routePrefix,
       context: {
@@ -50,11 +50,11 @@ class AzureMonofunction {
       },
       errorHandler: this.error,
     };
-    options = routes.map((route) => ({
+    const routes = routeList.map((route) => ({
       path: route.path,
       action: async (context) => this.action(route, context),
     }));
-    this.router = new UniversalRouter(options);
+    this.router = new UniversalRouter(routes, options);
   }
 
   async listen() {
