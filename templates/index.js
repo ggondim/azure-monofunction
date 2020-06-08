@@ -1,16 +1,19 @@
 const app = require('azure-monofunction');
 const routes = require('../routes.js');
 
+app.debug = true;
+
 // Custom global middleware example
-app.use(async (context, STOP_SIGNAL) => {
+const hasAuth = (context) => context.meta && context.meta.auth;
+app.useIf(hasAuth, async (context, STOP_SIGNAL) => {
   context.res.headers = {
-    'X-Custom-Header': 'happy'
+    'X-Custom-Header': 'NEEDS AUTHORIZATION'
   };
 });
 
 app.addRoutes(routes);
 
-app.onError((context, error) => {
+app.onError((error, context) => {
   context.res.status = 500;
   context.res.body = error;
 });
