@@ -1,6 +1,6 @@
 {
   "name": "azure-monofunction",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Now you can have multiple API routes and controllers using a single Azure Function.",
   "files": [
     "scripts/*",
