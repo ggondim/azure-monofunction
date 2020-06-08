@@ -9,7 +9,6 @@
   ],
   "main": "index.js",
   "scripts": {
-    "postinstall": "scripts/install.js"
   },
   "repository": {
     "type": "git",
