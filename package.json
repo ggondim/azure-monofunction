@@ -1,6 +1,6 @@
 {
   "name": "azure-monofunction",
-  "version": "0.1.3",
+  "version": "0.1.0",
   "description": "Now you can have multiple API routes and controllers using a single Azure Function.",
   "files": [
     "scripts/*",
@@ -8,19 +8,14 @@
     "index.js"
   ],
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "scripts/install.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NOALVO/azure-monofunction.git"
   },
-  "keywords": [
-    "API",
-    "Functions",
-    "Azure",
-    "Monofunction",
-    "Serverless",
-    "REST"
-  ],
+  "keywords": ["API","Functions","Azure","Monofunction","Serverless","REST"],
   "author": {
     "name": "Gustavo Gondim",
     "url": "https://github.com/ggondim"
