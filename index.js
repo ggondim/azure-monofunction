@@ -245,7 +245,7 @@ class AzureMonofunction {
 
   /**
    * Adds a single route to the monofunction router.
-   * @param {Array<['GET','POST','PATCH','PUT','DELETE']>} methods List of HTTP verbs for the route.
+   * @param {Array<'GET'|'POST'|'PATCH'|'PUT'|'DELETE'>} methods List of HTTP verbs for the route.
    * @param {string} path The URL path for the route.
    * @param {AsyncGeneratorFunction|AsyncGeneratorFunction[]} run A single function middleware or a list of middlewares tha should run for the route, in form of `async (context) => {}` as specified in Azure Functions Middlewares package.
    * @memberof AzureMonofunction
