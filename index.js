@@ -230,9 +230,10 @@ class AzureMonofunction {
    * @param {Array<{ path, methods, run, logger? }>} routes A list of valid routes.
    * @memberof AzureMonofunction
    */
-  addRoutes(routes) {
+  addRoutes(...routes) {
     this.log('Adding routes middleware', routes);
-    const routeList = Array.isArray(routes) ? routes : [routes];
+    let routeList = Array.isArray(routes) ? routes : [routes];
+    routeList = routeList.reduce((a,b) => [...a, ...(Array.isArray(b) ? b : [b])], []);
     const logger = this.log.bind(this);
     this.routes = routeList.map(route => {
       const amfRoute = new AzureMonofunctionRoute(route.path, route.methods, route.run, logger);
